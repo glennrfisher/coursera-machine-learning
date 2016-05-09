@@ -1,0 +1,5 @@
+# ignore email/token authentication
+token.mat
+
+# ignore octave workspace
+octave-workspace
