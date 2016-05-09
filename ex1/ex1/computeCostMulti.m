@@ -13,9 +13,10 @@ J = 0;
 % Instructions: Compute the cost of a particular choice of theta
 %               You should set J to the cost.
 
-
-
-
+predictions = (theta' * X')';
+squared_error = (predictions - y) .^ 2;
+squared_error_sum = sum(squared_error);
+J = squared_error_sum / (2*m);
 
 % =========================================================================
 

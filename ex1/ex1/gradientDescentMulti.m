@@ -17,15 +17,16 @@ for iter = 1:num_iters
     %       of the cost function (computeCostMulti) and gradient here.
     %
 
+    predictions = (theta' * X')';
+    error = predictions - y;
 
+    product = zeros(size(X));
+    for j = 1:length(theta)
+        product(:, j) = error .* X(:, j);
+    end
 
-
-
-
-
-
-
-
+    summation = sum(product)';
+    theta = theta - alpha / m * summation;
 
     % ============================================================
 
