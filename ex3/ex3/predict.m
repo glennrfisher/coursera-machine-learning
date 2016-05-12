@@ -21,13 +21,20 @@ p = zeros(size(X, 1), 1);
 %       can use max(A, [], 2) to obtain the max for each row.
 %
 
+% add bias to input layer
+Z1 = [ones(m, 1) X];
 
+% compute second layer activations
+Z2 = [ones(m, 1) sigmoid(Z1 * Theta1')];
 
+% compute output layer activations (probabilities by class)
+Z3 = sigmoid(Z2 * Theta2');
 
+% compute predictions (one-vs-all, i.e. most likely class)
+[max_probability, max_class] = max(Z3, [], 2);
 
-
-
-
+% rename output variable
+p = max_class;
 
 % =========================================================================
 

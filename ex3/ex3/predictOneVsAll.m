@@ -30,11 +30,14 @@ X = [ones(m, 1) X];
 %       for each row.
 %       
 
+% compute predictions (probabilities by class)
+probability_by_class = X * all_theta';
 
+% compute predictions (one-vs-all, i.e. most likely class)
+[max_probability, max_class] = max(probability_by_class, [], 2);
 
-
-
-
+% rename output variable
+p = max_class;
 
 % =========================================================================
 
