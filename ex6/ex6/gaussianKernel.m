@@ -16,10 +16,9 @@ sim = 0;
 %
 %
 
-
-
-
-
+fracNum = sum((x1 - x2) .^ 2);
+fracDenom = 2 * sigma^2;
+sim = exp(-fracNum / fracDenom);
 
 % =============================================================
     
